@@ -1,21 +1,19 @@
 import React from 'react';
-import { Github, Shield, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-emerald-900/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-1">
-          <p className="text-white font-medium">Cognicode</p>
-          <p className="text-zinc-400 text-sm">Secure, scalable AI engineering partner</p>
+    <footer className="border-t border-emerald-700/30 bg-black/90">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-emerald-100/70 sm:flex-row">
+        <div className="flex items-center gap-2">
+          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_18px_6px_rgba(16,185,129,0.5)]" />
+          <span className="font-medium text-white">Cognicode</span>
         </div>
-        <div className="flex items-center gap-4 text-zinc-300">
-          <a href="#security" className="inline-flex items-center gap-2 hover:text-white transition"><Shield size={16} /> Security</a>
-          <a href="https://github.com" rel="noreferrer" target="_blank" className="inline-flex items-center gap-2 hover:text-white transition"><Github size={16} /> GitHub</a>
-          <a href="mailto:hello@cognicode.app" className="inline-flex items-center gap-2 hover:text-white transition"><Mail size={16} /> Contact</a>
-        </div>
+        <nav className="flex items-center gap-6">
+          <a href="#security" className="hover:text-emerald-200">Security</a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-emerald-200">GitHub</a>
+          <a href="#contact" className="hover:text-emerald-200">Contact</a>
+        </nav>
       </div>
-      <div className="py-4 text-center text-xs text-zinc-500">© {new Date().getFullYear()} Cognicode. All rights reserved.</div>
     </footer>
   );
 };
