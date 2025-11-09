@@ -1,38 +1,52 @@
-import React from 'react';
-import { Rocket, Shield, Workflow, Users } from 'lucide-react';
+import { Sparkles, Workflow, Shield, Gauge } from 'lucide-react';
 
-const Card = ({ icon: Icon, title, desc }) => (
-  <div className="group relative overflow-hidden rounded-xl border border-emerald-700/30 bg-black/40 p-5 transition hover:border-emerald-500/60 hover:bg-black/60">
-    <div className="absolute inset-0 -z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{
-      background: 'radial-gradient(600px 120px at 10% 0%, rgba(16,185,129,0.08), transparent)',
-    }} />
-    <div className="relative z-10 flex items-center gap-3">
-      <div className="rounded-md bg-emerald-600/10 p-2 text-emerald-400">
-        <Icon size={18} />
-      </div>
-      <div>
-        <h3 className="text-sm font-semibold text-white">{title}</h3>
-        <p className="mt-1 text-sm text-emerald-100/70">{desc}</p>
-      </div>
-    </div>
-  </div>
-);
+export default function Features() {
+  const items = [
+    {
+      icon: Sparkles,
+      title: 'Creative Engine',
+      desc: 'Aesthetic, high-performance UI with Tailwind and motion-ready patterns.'
+    },
+    {
+      icon: Workflow,
+      title: 'Structured Flow',
+      desc: 'Clear steps from idea to launch with modular, focused components.'
+    },
+    {
+      icon: Shield,
+      title: 'Reliable Core',
+      desc: 'Stable embedding of interactive 3D without layout flicker or overlay issues.'
+    },
+    {
+      icon: Gauge,
+      title: 'Fast by Default',
+      desc: 'Optimized loading path and minimal JS for a smooth experience.'
+    }
+  ];
 
-const Features = () => {
   return (
-    <section id="protocol" className="relative mx-auto max-w-6xl px-6 py-20">
-      <div className="mb-10 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight text-white">Role & Goal</h2>
-        <p className="mt-2 text-emerald-100/70">A clear collaboration path from idea to ship.</p>
-      </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Card icon={Users} title="Define Roles" desc="Align PMs, devs, and AI agents with explicit ownership." />
-        <Card icon={Workflow} title="Set Goals" desc="Translate intent into executable tasks with guardrails." />
-        <Card icon={Shield} title="Harden Security" desc="Built-in keys, scopes, and runtime isolation by default." />
-        <Card icon={Rocket} title="Ship Fast" desc="Preview, validate, and deploy with one seamless loop." />
+    <section id="features" className="relative w-full bg-black py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-center text-2xl font-semibold tracking-tight text-emerald-200 sm:text-3xl">Role & Goal</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-emerald-200/70">
+          The essentials that power the Cognicode landing experience.
+        </p>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ icon: Icon, title, desc }) => (
+            <div
+              key={title}
+              className="group rounded-xl border border-emerald-900/40 bg-gradient-to-b from-emerald-900/10 to-black/60 p-5 transition hover:border-emerald-800"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-emerald-600/90 text-black shadow-inner">
+                <Icon size={18} />
+              </div>
+              <h3 className="mt-4 text-base font-medium text-emerald-100">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-emerald-200/70">{desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
-export default Features;
+}
