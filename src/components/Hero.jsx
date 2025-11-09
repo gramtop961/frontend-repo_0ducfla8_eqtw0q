@@ -1,5 +1,6 @@
 import Spline from '@splinetool/react-spline';
 import { ArrowRight } from 'lucide-react';
+import OrbCue from './OrbCue';
 
 export default function Hero() {
   return (
@@ -42,6 +43,10 @@ export default function Hero() {
           >
             Learn More
           </a>
+        </div>
+
+        <div className="mt-6">
+          <OrbCue />
         </div>
       </div>
     </section>
